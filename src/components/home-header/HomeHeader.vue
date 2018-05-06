@@ -17,12 +17,13 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
+@import '~styles/common.styl'
 .header {
   display: flex;
   width: 100%;
   height: 0.86rem;
   line-height: 0.86rem;
-  background: red;
+  background: $bgColor;
   color: #fff;
 
   .header-left {
