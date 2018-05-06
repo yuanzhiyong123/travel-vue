@@ -2,15 +2,22 @@
     <div>
       <home-header></home-header>
       <div class="swiper-wrapper">
-        <swiper :autoplay="3000" :swiperList="swiperList"></swiper>
+        <swiper :autoplay="3000" :swiperList="swiperList">
+          <template slot-scope="props">
+            <!-- <span>{{props.item.id}}</span> -->
+            <img class="swiper-img" :src="props.item.imgUrl" alt="">
+          </template>
+        </swiper>
       </div>
+      <home-nav></home-nav>
     </div>
 </template>
 <script>
-import HomeHeader from '@/components/home-header/HomeHeader.vue'
-import Swiper from '@/components/swiper/Swiper.vue'
+import HomeHeader from "@/components/home-header/HomeHeader.vue";
+import Swiper from "@/components/swiper/Swiper.vue";
+import HomeNav from "@/components/home-nav/HomeNav.vue";
 export default {
-  name: 'Home',
+  name: "Home",
   data() {
     return {
       swiperList: [
@@ -25,14 +32,17 @@ export default {
             "https://imgs.qunarzz.com/piao/fusion/1803/bd/04554e7c67650302.jpg_640x170_a793a191.jpg"
         }
       ]
-    }
+    };
   },
   components: {
     HomeHeader,
-    Swiper
+    Swiper,
+    HomeNav
   }
-}
+};
 </script>
 <style>
-
+.swiper-img {
+  width: 100%;
+}
 </style>

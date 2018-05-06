@@ -1,9 +1,10 @@
 <template>
   <swiper :options="swiperOption" class="swiper">
-      <swiper-slide v-for="item in swiperList" :key="item.id">
-        <img class="swiper-img" :src="item.imgUrl" alt="">
+      <swiper-slide v-for="(item,index) in swiperList" :key="item.id?item.id:index">
+        <!-- <img class="swiper-img" :src="item.imgUrl" alt=""> -->
+        <slot :item="item"></slot>
       </swiper-slide>
-      <div class="swiper-pagination"  slot="pagination"></div>
+      <div class="swiper-pagination"  slot="pagination" v-show="swiperList.length>1"></div>
     </swiper>
 </template>
 <script>
