@@ -10,12 +10,16 @@
         </swiper>
       </div>
       <home-nav></home-nav>
+      <home-recommend></home-recommend>
+      <home-weekend></home-weekend>
     </div>
 </template>
 <script>
 import HomeHeader from "@/components/home-header/HomeHeader.vue";
 import Swiper from "@/components/swiper/Swiper.vue";
 import HomeNav from "@/components/home-nav/HomeNav.vue";
+import HomeRecommend from '@/components/home-recommend/Recommend.vue'
+import HomeWeekend from '@/components/home-weekend/Weekend.vue'
 export default {
   name: "Home",
   data() {
@@ -37,7 +41,9 @@ export default {
   components: {
     HomeHeader,
     Swiper,
-    HomeNav
+    HomeNav,
+    HomeRecommend,
+    HomeWeekend
   }
 };
 </script>
