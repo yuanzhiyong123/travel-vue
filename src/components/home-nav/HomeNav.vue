@@ -18,65 +18,8 @@
 <script>
 import Swiper from "@/components/swiper/Swiper.vue";
 export default {
-  data() {
-    return {
-      navList: [
-        {
-          id: "001",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1606/b3/0249b48a69aaf49a.png",
-          desc: "周边游"
-        },
-        {
-          id: "002",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1704/fd/7b733d3656f4d002.png",
-          desc: "八达岭"
-        },
-        {
-          id: "003",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1703/5a/612ae0fee636d202.jpg",
-          desc: "故宫"
-        },
-        {
-          id: "004",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1606/72/65b06c9a1158de9a.png",
-          desc: "北镇"
-        },
-        {
-          id: "005",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1804/53/f7c33a4412d59e02.png",
-          desc: "专线"
-        },
-        {
-          id: "006",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1606/b3/0249b48a69aaf49a.png",
-          desc: "周边游"
-        },
-        {
-          id: "007",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1606/b3/0249b48a69aaf49a.png",
-          desc: "周边游"
-        },
-        {
-          id: "008",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1606/b3/0249b48a69aaf49a.png",
-          desc: "周边游"
-        },
-        {
-          id: "009",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1606/b3/0249b48a69aaf49a.png",
-          desc: "周边游"
-        }
-      ]
-    };
+  props: {
+    navList: Array
   },
   computed: {
     pages() {

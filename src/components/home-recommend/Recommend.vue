@@ -11,9 +11,9 @@
         </div>
         <div class="item-con">
           <p class="item-title">{{item.title}}</p>
-          <p class="item-desc">已售2566</p>
+          <p class="item-desc">{{item.desc}}</p>
           <div class="item-address">出发地:北京</div>
-          <div class="item-price">¥{{item.price}}</div>
+          <div class="item-price">¥100</div>
         </div>
       </li>
     </ul>
@@ -21,35 +21,8 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      recommendList: [
-        {
-          id: '001',
-          imgUrl: 'https://imgs.qunarzz.com/p/tts2/1804/97/382b3bd308aea002.jpg_160x160_a24dc648.jpg',
-          title: '【去哪儿专线】天安门+故宫+八达岭+鸟巢（配耳麦+赠珍宝馆）',
-          price: '100'
-        },
-        {
-          id: '002',
-          imgUrl: 'https://imgs.qunarzz.com/p/tts9/1803/eb/ab21dece1058d502.jpg_160x160_8e23825b.jpg',
-          title: '【7-10-12点】八达岭长城门票+往返直通车，纯玩配领队',
-          price: '150'
-        },
-        {
-          id: '003',
-          imgUrl: 'https://imgs.qunarzz.com/p/tts0/1805/ce/4fb9e9918d254b02.jpg_160x160_4381a9af.jpg',
-          title: '【去哪儿专线】北京八达岭长城+十三陵定陵含地宫鸟巢纯玩一日游',
-          price: '120'
-        },
-        {
-          id: '004',
-          imgUrl: 'https://imgs.qunarzz.com/p/tts2/1804/97/382b3bd308aea002.jpg_160x160_a24dc648.jpg',
-          title: '【去哪儿专线】天安门+故宫+八达岭+鸟巢（配耳麦+赠珍宝馆）',
-          price: '40'
-        }
-      ]
-    }
+  props: {
+    recommendList: Array
   }
 };
 </script>
