@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     getResource() {
-      Axios.get("/static/mock/index.json").then(res => {
+      Axios.get("/api/index.json").then(res => {
         this.resourceList = res.data.data;
         this.navList = res.data.data.iconList;
         console.log(this.resourceList.iconList);
