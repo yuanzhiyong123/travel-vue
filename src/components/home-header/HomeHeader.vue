@@ -6,9 +6,11 @@
     <div class="header-input">
       <input type="text" class="search" placeholder="请输入要搜索的内容" />
     </div>
-    <div class="header-right">
-      城市<span class="iconfont icon-jiantouarrow486"></span>
-    </div>
+    <router-link to="/city" class="city-wrapper">
+      <div class="header-right">
+        城市<span class="iconfont icon-jiantouarrow486"></span>
+      </div>
+    </router-link>
   </div>
 </template>
 <script>
@@ -17,7 +19,8 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-@import '~styles/common.styl'
+@import '~styles/common.styl';
+
 .header {
   display: flex;
   width: 100%;
@@ -28,7 +31,8 @@ export default {
 
   .header-left {
     flex: 0 0 0.64rem;
-    text-align :center;
+    text-align: center;
+
     .icon-fanhui {
       display: inline-block;
     }
@@ -36,25 +40,30 @@ export default {
 
   .header-input {
     flex: 1;
-    height: .64rem;
-    line-height :.64rem;
-    margin-top:.12rem;
-    margin-left:.2rem;
-    padding-left:.2rem;
-    border-radius: .1rem;
+    height: 0.64rem;
+    line-height: 0.64rem;
+    margin-top: 0.12rem;
+    margin-left: 0.2rem;
+    padding-left: 0.2rem;
+    border-radius: 0.1rem;
     color: #ccc;
     background: #fff;
-    overflow:hidden;
-    .search{
-      width :100%;
-      height:100%;
+    overflow: hidden;
+
+    .search {
+      width: 100%;
+      height: 100%;
     }
   }
 
-  .header-right {
-    // width :1.24rem;
+  .city-wrapper {
+    width: 1.24rem;
     flex: 0 0 1.24rem;
-    text-align: center;
+
+    .header-right {
+      text-align: center;
+      color: #fff;
+    }
   }
 }
 </style>
