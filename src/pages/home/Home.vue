@@ -37,7 +37,6 @@ export default {
       Axios.get("/api/index.json").then(res => {
         this.resourceList = res.data.data;
         this.navList = res.data.data.iconList;
-        console.log(this.resourceList.iconList);
       });
     }
   },
