@@ -1,5 +1,6 @@
 <template>
-  <div class="list">
+  <div class="list" ref="city">
+    <div>
       <div class="area">
           <div class="title border-topbottom">当前城市</div>
           <div class="button-list">
@@ -33,11 +34,49 @@
       </div>
       <div class="area">
           <div class="title border-topbottom">A</div>
+          <ul class="city-list">
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+          </ul>
       </div>
+      <div class="area">
+          <div class="title border-topbottom">A</div>
+          <ul class="city-list">
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+          </ul>
+      </div>
+      <div class="area">
+          <div class="title border-topbottom">A</div>
+          <ul class="city-list">
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+            <li class="city-item border-bottom">西辛庄</li>
+          </ul>
+      </div>
+    </div>
   </div>
 </template>
 <script>
-export default {};
+import BScroll from 'better-scroll';
+export default {
+  mounted() {
+    this.scroll = new BScroll(this.$refs.city, {
+      click: true
+    });
+  }
+};
 </script>
 <style lang="stylus" scoped>
 .border-topbottom {
@@ -50,7 +89,24 @@ export default {};
   }
 }
 
+.border-bottom {
+  &:before {
+    border-color: #ccc;
+  }
+
+  &:after {
+    border-color: #ccc;
+  }
+}
+
 .list {
+  position: absolute;
+  overflow: hidden;
+  top: 1.78rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
   .title {
     height: 0.44rem;
     line-height: 0.44rem;
@@ -74,6 +130,13 @@ export default {};
         margin: 0 0.1rem;
         border-radius: 0.06rem;
       }
+    }
+  }
+
+  .city-list {
+    .city-item {
+      line-height: 0.74rem;
+      padding-left: 0.2rem;
     }
   }
 }
