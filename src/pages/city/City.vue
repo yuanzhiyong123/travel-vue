@@ -4,7 +4,6 @@
     <city-search></city-search>
     <city-list :cities="cities" :hotCities="hotCities"></city-list>
     <city-bar :cities="cities"></city-bar>
-    
   </div>
 </template>
 <script>
