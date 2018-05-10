@@ -17,7 +17,7 @@
             </div>
           </div>
       </div>
-      <div class="area" v-for="(list, key) in cities" :key="key">
+      <div class="area" v-for="(list, key) in cities" :key="key" :ref="key">
           <div class="title border-topbottom">{{key}}</div>
           <ul class="city-list">
             <li class="city-item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
@@ -36,6 +36,10 @@ export default {
   mounted() {
     this.scroll = new BScroll(this.$refs.city, {
       click: true
+    });
+    this.bus.$on('cityBarChange', (target) => {
+      let el = this.$refs[target][0];
+      this.scroll.scrollToElement(el);
     });
   }
 };
