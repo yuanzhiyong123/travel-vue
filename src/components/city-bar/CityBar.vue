@@ -1,22 +1,14 @@
 <template>
   <ul class="city-bar">
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
-    <li class="city-item">A</li>
+    <li class="city-item" v-for="(item , key) in cities" :key="key">{{key}}</li>
   </ul>
 </template>
 <script>
-export default {};
+export default {
+  props: {
+    cities: Object
+  }
+};
 </script>
 <style lang="stylus" scoped>
 .city-bar {
@@ -28,7 +20,6 @@ export default {};
   bottom: 0;
   right: 0;
   width: 0.4rem;
-  background: #ccc;
 
   .city-item {
     line-height: .4rem;
