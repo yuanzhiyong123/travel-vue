@@ -10,7 +10,9 @@ export default {
   },
   data() {
     return {
-      touchStart: false
+      touchStart: false,
+      startY: 0,
+      timer: true
     };
   },
   computed: {
@@ -22,6 +24,9 @@ export default {
       return cityBars;
     }
   },
+  updated() {
+    this.startY = this.$refs["A"][0].offsetTop;
+  },
   methods: {
     handleCityBarClick(e) {
       this.bus.$emit("cityBarChange", e.target.innerHTML);
@@ -31,12 +36,18 @@ export default {
     },
     handleTouchMove(e) {
       if (this.touchStart) {
-        let startY = this.$refs["A"][0].offsetTop;
-        let touchY = e.touches[0].clientY;
-        let index = Math.floor((touchY - 89 - startY) / 20);
-        if(index >= 0 && index < this.cityBars.length) {
-          this.bus.$emit("cityBarChange", this.cityBars[index]);
+        if(!this.timer) {
+          return;
         }
+        this.timer = false;
+        setTimeout(() => {
+          let touchY = e.touches[0].clientY;
+          let index = Math.floor((touchY - 89 - this.startY) / 20);
+          if(index >= 0 && index < this.cityBars.length) {
+            this.bus.$emit("cityBarChange", this.cityBars[index]);
+          }
+          this.timer = true;
+        }, 20);
       }
     },
     handleTouchEnd() {
