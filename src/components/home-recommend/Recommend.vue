@@ -2,7 +2,10 @@
   <div class="recommend">
     <div class="title">热门推荐</div>
     <ul class="recommend-con">
-      <li class="recommend-item border-bottom"
+      <router-link
+        tag="li"
+        :to="'/detail/'+item.id"
+        class="recommend-item border-bottom"
         v-for="item in recommendList"
         :key="item.id"
       >
@@ -15,7 +18,7 @@
           <div class="item-address">出发地:北京</div>
           <div class="item-price">¥100</div>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>

@@ -4,7 +4,7 @@
         <!-- <img class="swiper-img" :src="item.imgUrl" alt=""> -->
         <slot :item="item"></slot>
       </swiper-slide>
-      <div class="swiper-pagination"  slot="pagination" v-show="swiperList.length>1"></div>
+      <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
 </template>
 <script>
@@ -24,6 +24,10 @@ export default {
     autoplay: {
       type: Number,
       default: 1000
+    },
+    paginationType: {
+      type: String,
+      default: 'bullets'
     }
   },
   data() {
@@ -32,7 +36,10 @@ export default {
         pagination: ".swiper-pagination",
         loop: this.loop,
         autoplay: this.autoplay,
-        autoplayDisableOnInteraction: false // 用户手动操作后不停止轮播
+        autoplayDisableOnInteraction: false, // 用户手动操作后不停止轮播
+        paginationType: this.paginationType, // 分页器类型 ‘bullets’  圆点（默认）‘fraction’  分式 ‘progress’  进度条
+        observer: true,
+        observeParents: true
       }
     };
   }
