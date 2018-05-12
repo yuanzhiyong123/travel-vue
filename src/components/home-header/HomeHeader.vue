@@ -8,14 +8,20 @@
     </div>
     <router-link to="/city" class="city-wrapper">
       <div class="header-right">
-        城市<span class="iconfont icon-jiantouarrow486"></span>
+        {{city}}<span class="iconfont icon-jiantouarrow486"></span>
       </div>
     </router-link>
   </div>
 </template>
 <script>
+import {mapGetters} from 'vuex'
 export default {
-  name: "HomeHeader"
+  name: "HomeHeader",
+  computed: {
+    ...mapGetters([
+      'city'
+    ])
+  }
 };
 </script>
 <style lang="stylus" scoped>

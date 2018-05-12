@@ -5,14 +5,14 @@
           <div class="title border-topbottom">当前城市</div>
           <div class="button-list">
             <div class="button-wrapper">
-              <div class="button">北京</div>
+              <div class="button">{{city}}</div>
             </div>
           </div>
       </div>
       <div class="area">
           <div class="title border-topbottom">热门城市</div>
           <div class="button-list">
-            <div class="button-wrapper" v-for="item in hotCities" :key="item.id">
+            <div class="button-wrapper" v-for="item in hotCities" @click="handleSelectCity(item.name)" :key="item.id">
               <div class="button">{{item.name}}</div>
             </div>
           </div>
@@ -20,27 +20,40 @@
       <div class="area" v-for="(list, key) in cities" :key="key" :ref="key">
           <div class="title border-topbottom">{{key}}</div>
           <ul class="city-list">
-            <li class="city-item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
+            <li class="city-item border-bottom" v-for="item in list" @click="handleSelectCity(item.name)" :key="item.id">{{item.name}}</li>
           </ul>
       </div>
     </div>
   </div>
 </template>
 <script>
-import BScroll from 'better-scroll';
+import BScroll from "better-scroll";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   props: {
     cities: Object,
     hotCities: Array
   },
+  computed: {
+    ...mapGetters(["city"])
+  },
   mounted() {
     this.scroll = new BScroll(this.$refs.city, {
       click: true
     });
-    this.bus.$on('cityBarChange', (target) => {
+    this.bus.$on("cityBarChange", target => {
       let el = this.$refs[target][0];
       this.scroll.scrollToElement(el);
     });
+  },
+  methods: {
+    ...mapMutations({
+      setCity: "SET_CITY"
+    }),
+    handleSelectCity(city) {
+      this.setCity(city);
+      this.$router.push("/");
+    }
   }
 };
 </script>
