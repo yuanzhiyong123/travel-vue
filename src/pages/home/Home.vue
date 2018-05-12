@@ -21,6 +21,7 @@ import HomeNav from "@/components/home-nav/HomeNav.vue";
 import HomeRecommend from "@/components/home-recommend/Recommend.vue";
 import HomeWeekend from "@/components/home-weekend/Weekend.vue";
 import Axios from "axios";
+import {mapGetters} from 'vuex';
 export default {
   name: "Home",
   data() {
@@ -32,12 +33,22 @@ export default {
   created() {
     this.getResource();
   },
+  computed: {
+    ...mapGetters([
+      'city'
+    ])
+  },
   methods: {
     getResource() {
-      Axios.get("/api/index.json").then(res => {
+      Axios.get('/api/index.json?city=' + this.city).then(res => {
         this.resourceList = res.data.data;
         this.navList = res.data.data.iconList;
       });
+    }
+  },
+  watch: {
+    city() {
+      this.getResource();
     }
   },
   components: {

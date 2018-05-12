@@ -63,8 +63,9 @@ export default {
   }
 
   .city-wrapper {
-    width: 1.24rem;
-    flex: 0 0 1.24rem;
+    min-width: 1.24rem;
+    // flex: 0 0 1.24rem;
+    padding-left: .1rem;
 
     .header-right {
       text-align: center;

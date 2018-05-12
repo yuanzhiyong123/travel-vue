@@ -1,4 +1,4 @@
 const state = {
-  city: "上海"
+  city: localStorage.getItem('city') || '北京'
 }
 export default state;
