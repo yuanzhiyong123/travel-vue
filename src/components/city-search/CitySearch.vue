@@ -42,6 +42,7 @@ export default {
     handleSelectCity(city) {
       this.setCity(city);
       this.$router.push("/");
+      this.keyword = '';
     }
   },
   watch: {
