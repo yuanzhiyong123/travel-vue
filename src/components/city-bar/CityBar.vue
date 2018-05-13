@@ -1,5 +1,5 @@
 <template>
-  <ul class="city-bar">
+  <ul class="city-bar" ref="citybar">
     <li class="city-item" v-for="item in cityBars" :key="item" :ref="item" @click="handleCityBarClick" @touchstart="handleTouchStart" @touchmove="handleTouchMove" @touchend="handleTouchEnd">{{item}}</li>
   </ul>
 </template>
@@ -33,6 +33,7 @@ export default {
     },
     handleTouchStart() {
       this.touchStart = true;
+      this.$refs.citybar.style.background = '#ccc';
     },
     handleTouchMove(e) {
       if (this.touchStart) {
@@ -52,6 +53,7 @@ export default {
     },
     handleTouchEnd() {
       this.touchStart = false;
+      this.$refs.citybar.style.background = 'transparent';
     }
   }
 };
