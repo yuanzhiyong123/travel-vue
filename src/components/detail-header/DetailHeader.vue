@@ -69,8 +69,8 @@ export default {
   .fixed {
     position: fixed;
     width: 100%;
-    height: 0.86rem;
-    line-height: 0.86rem;
+    height: $headerHeight;
+    line-height: $headerHeight;
     text-align: center;
     background: $bgColor;
     color: #fff;

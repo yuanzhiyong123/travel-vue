@@ -15,8 +15,8 @@ export default {
   .header {
     position: relative;
     width: 100%;
-    height: .86rem;
-    line-height .86rem;
+    height: $headerHeight;
+    line-height $headerHeight;
     text-align: center;
     background :$bgColor
     color: #fff;

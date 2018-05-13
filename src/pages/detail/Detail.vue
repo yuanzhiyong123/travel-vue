@@ -2,17 +2,19 @@
   <div class="detail">
     <detail-banner></detail-banner>
     <detail-header></detail-header>
-    <div class="con"></div>
+    <detail-introduce></detail-introduce>
   </div>
 </template>
 
 <script>
 import DetailBanner from '@/components/detail-banner/DetailBanner'
 import DetailHeader from '@/components/detail-header/DetailHeader'
+import DetailIntroduce from '@/components/detail-introduce/DetailIntroduce'
 export default {
   components: {
     DetailBanner,
-    DetailHeader
+    DetailHeader,
+    DetailIntroduce
   }
 };
 </script>

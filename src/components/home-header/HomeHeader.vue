@@ -30,8 +30,8 @@ export default {
 .header {
   display: flex;
   width: 100%;
-  height: 0.86rem;
-  line-height: 0.86rem;
+  height: $headerHeight;
+  line-height: $headerHeight;
   background: $bgColor;
   color: #fff;
 

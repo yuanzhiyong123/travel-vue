@@ -52,6 +52,7 @@ export default {
   right: 0;
   left: 0;
   background: #000;
+  z-index: 99;
 
   .wrapper {
     height: 0;
